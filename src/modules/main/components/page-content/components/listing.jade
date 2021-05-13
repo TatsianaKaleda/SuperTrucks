@@ -1,0 +1,7 @@
+- let stockItems = stock
+
+div.listing
+    each stockItem, i in stockItems
+        include ../../../../shared/product-card.jade
+        +productCard(stockItem.image, stockItem.title, stockItem.description, stockItem.year, stockItem.mileage,
+            stockItem.mileage_measure, stockItem.axle_configuration, stockItem.price, stockItem.price_currency)

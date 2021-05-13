@@ -1,0 +1,32 @@
+.page-content {
+  &_title {
+    margin: 5px 0 25px $filters-width;
+    padding-left: $filters-indent;
+    @include headingLevel_1;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+
+    &_content {
+      flex: 0 0 calc(100% - #{$filters-width} - #{$filters-indent});
+      width: calc(100% - #{$filters-width} - #{$filters-indent});
+      margin-left: $filters-indent;
+
+      &-description {
+        margin: 24px 0 23px;
+
+        &-value {
+          @include nav_link;
+          max-width: 565px;
+          color: $default-text;
+
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+}

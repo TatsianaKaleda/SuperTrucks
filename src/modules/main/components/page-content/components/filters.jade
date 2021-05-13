@@ -1,0 +1,55 @@
+- let stockList = stock;
+- let filtersList = filters;
+- let checkboxType = "checkbox";
+- let radioType = "radio";
+- let maxPrice = 0;
+- let minPrice = 0;
+
+each stockItem in stockList
+    if (stockItem.price > maxPrice)
+        - maxPrice = stockItem.price;
+        - minPrice = stockItem.price;
+    if (stockItem.price < minPrice)
+        - minPrice = stockItem.price;
+
+div.filters-container
+    h4.filters-count= stockList.length + " Results Found"
+
+    ul.collapsible.expandable.filters
+        each filterItem in filtersList
+            li.filters-item.active
+                div.collapsible-header
+                    span= filterItem.name
+                    span.arrow
+                div.collapsible-body
+                    form(action="#")
+                    each filterValue, i in filterItem.value
+                        if (filterItem.type === checkboxType)
+                            p.filters-item-container
+                                label(for=filterItem.name + i)
+                                    input.filled-in(type="checkbox", checked="checked", id=filterItem.name + i)
+                                    span.filters-item-value= filterValue
+                        else
+                            p.filters-item-container
+                                label(for=filterItem.name + i)
+                                    input.with-gap(type="radio", checked, name=filterItem.name, id=filterItem.name + i)
+                                    span.filters-item-value= filterValue
+
+        li.filters-item.filters-price.active
+            div.collapsible-header
+                span Price
+                span.arrow
+            div.collapsible-body
+                form(action="#")
+                    div.input-field.col.s6.filters-price-container
+                        input.validate.filters-price-container-item(placeholder="min " + minPrice, type="text")
+                        input.validate.filters-price-container-item(placeholder="max " + maxPrice, type="text")
+
+        li.filters-item.filters-price.active
+            div.collapsible-header
+                span Other parameters
+                span.arrow
+            div.collapsible-body
+                input.validate(placeholder="Enter parameters" id="first_name" type="text")
+
+    a.waves-effect.waves-light.btn.filters-search SEARCH

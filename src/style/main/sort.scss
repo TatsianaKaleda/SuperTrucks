@@ -1,0 +1,107 @@
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  & .pagination {
+    display: flex;
+
+    & li.pagination-btn {
+      @include nav_link;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      transition: 0.3s;
+
+      &.disabled a {
+        color: $border;
+      }
+
+      &.active {
+        background: $btn-primary;
+
+        a {
+          color: #000;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      &:not(.disabled):not(.active) {
+        &:hover {
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        &:active {
+          box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.05);
+          filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+        }
+      }
+    }
+  }
+
+  & .sort {
+    display: flex;
+    align-items: baseline;
+
+    &-name {
+      @include nav_link;
+      margin-right: 10px;
+      color: #000;
+    }
+
+    & .input-field {
+      margin: 0;
+
+      & select {
+
+      }
+
+      & .select-wrapper {
+        & input.select {
+          &-dropdown,
+          &-dropdown:focus {
+            padding: 8px 36px 8px 10px;
+            margin: 0;
+            width: auto;
+            max-width: calc(207px - 36px - 10px);
+            max-height: $inputs-height;
+            height: auto;
+            border: 1px solid $border;
+            background: url("../img/icons/dropdown.svg") calc(100% - 15px) no-repeat $white;
+            color: $disabled-text;
+
+            &:focus {
+              border: 1px solid $controls-bg;
+              color: $default-text;
+            }
+          }
+        }
+
+        & .caret {
+          display: none;
+        }
+
+        & li.selected > span {
+          color: $default-text;
+        }
+
+        & li:not(.selected) > span {
+          &:hover {
+            color: $link-hover;
+          }
+        }
+
+        & li > span {
+          color: $link;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+-let eur = "EUR"
+-let usd = "USD"
+
+mixin productCard(img, title, description, year, mileage, measure, axle, price, currency)
+    div.product-card
+        div.product-card_img
+            img.product-card_img-item(src="./img/" + img)
+
+        div.product-card_content
+            div.product-card_content-container
+                div.product-card_content-container-title
+                    h4.product-card_content-container-title-value= title
+
+                    if (currency === eur)
+                        p.product-card_content-container-title-price &euro;
+                            span= " " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    else if (currency === usd)
+                        p.product-card_content-container-title-price &dollar;
+                            span= " " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                p.product-card_content-container-description= description
+
+            div.product-card_content-labels
+                div.product-card_content-labels-item= year
+                div.product-card_content-labels-item #{mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} #{measure}
+                div.product-card_content-labels-item= axle
+
+

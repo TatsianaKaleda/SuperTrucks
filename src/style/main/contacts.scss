@@ -1,0 +1,89 @@
+.contacts {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 39px 19px 38px;
+  background: $white;
+
+  &-container {
+    display: flex;
+  }
+
+  &-info {
+    max-width: calc(#{$filters-width} - 19px);
+    margin-right: 19px;
+    width: 100%;
+
+    &_title {
+      @include header_logo;
+      margin: 0 0 18px;
+    }
+
+    &_address {
+      display: flex;
+      margin-bottom: 11px;
+
+      &-icon {
+        flex: 0 0 21px;
+        margin-right: 7px;
+        width: 21px;
+        height: 22px;
+        background: url("../img/icons/location.svg") center no-repeat;
+      }
+
+      &-value {
+        @include contacts;
+      }
+    }
+
+    &_phone {
+      display: flex;
+      margin-bottom: 16px;
+
+      &-icon {
+        flex: 0 0 14px;
+        margin-right: 10px;
+        width: 14px;
+        height: 14px;
+        background: url("../img/icons/phone.svg") center no-repeat;
+      }
+
+      &-value {
+        @include contacts;
+      }
+    }
+
+    &_social {
+      display: flex;
+
+      &-link {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 30px;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        &.facebook {
+          background: url("../img/icons/facebook.svg") center no-repeat;
+        }
+
+        &.instagram {
+          background: url("../img/icons/instagram.svg") center no-repeat;
+        }
+
+        &.twitter {
+          background: url("../img/icons/twitter.svg") center no-repeat;
+        }
+
+        &.youtube {
+          background: url("../img/icons/youtube.svg") center no-repeat;
+        }
+      }
+    }
+  }
+
+  &-description {
+    max-width: 561px;
+  }
+}

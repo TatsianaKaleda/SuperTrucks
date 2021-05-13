@@ -1,0 +1,18 @@
+- let meta = page_meta;
+
+doctype html
+html
+    head
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="keywords", content=meta.meta_keywords)
+        meta(name="description", content=meta.meta_description)
+        link(href="css/main.min.css", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap", rel="stylesheet")
+        title Test Task
+    body
+        include modules/header/header.jade
+        include modules/main/main.jade
+        include modules/footer/footer.jade
+    script(type="text/javascript" src="js/main.js")

@@ -1,0 +1,19 @@
+- let contactsInfo = contacts;
+
+    div.contacts
+        h2.contacts-info_title Logo / Company Name
+        div.contacts-container
+            div.contacts-info
+                div.contacts-info_address
+                    div.contacts-info_address-icon
+                    p.contacts-info_address-value= "Company Adress: " + contactsInfo.address
+
+                div.contacts-info_phone
+                    div.contacts-info_phone-icon
+                    p.contacts-info_phone-value= contactsInfo.phoneNumber
+
+                div.contacts-info_social
+                    each socialItem in contactsInfo.social
+                        a.contacts-info_social-link(class=socialItem.name, href=socialItem.link)
+
+            div.contacts-description= contactsInfo.description

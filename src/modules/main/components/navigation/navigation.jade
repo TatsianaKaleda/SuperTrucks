@@ -1,0 +1,8 @@
+- let links = nav
+
+nav.nav-extended.navigation.z-depth-0
+    div.nav-content
+        ul.tabs.navigation_links
+            each link in links
+                li.tab.navigation_links-item
+                    a.navigation_links-item-link(href=link.href)=link.text

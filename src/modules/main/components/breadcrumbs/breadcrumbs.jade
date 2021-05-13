@@ -1,0 +1,11 @@
+- let breadcrumbsList = breadcrumbs
+
+nav.breadcrumbs-container.z-depth-0
+    div.nav-wrapper
+        div.col.s12.breadcrumbs
+             each breadcrumb, i in breadcrumbsList
+                 if (i + 1 < breadcrumbsList.length)
+                    a.breadcrumb.breadcrumbs_item(href=breadcrumb.href)= breadcrumb.text
+                        span.breadcrumbs_item-separator >
+                 else
+                    a.breadcrumb.breadcrumbs_item._active(href=breadcrumb.href)= breadcrumb.text

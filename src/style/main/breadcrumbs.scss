@@ -1,0 +1,32 @@
+.breadcrumb:before {
+  display: none;
+  content: "";
+}
+
+.breadcrumbs {
+  padding: 13px 16px;
+
+  &-container {
+    height: auto;
+    line-height: initial;
+    background: none;
+  }
+
+  &_item {
+    color: $link;
+    @include link;
+
+    &._active {
+      color: $default-text;
+    }
+
+    &:hover:not(&._active) {
+      color: $link-hover;
+    }
+
+    &-separator {
+      padding: 0 8px;
+      color: #000;
+    }
+  }
+}

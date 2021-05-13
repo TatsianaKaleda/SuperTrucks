@@ -1,0 +1,20 @@
+.navigation {
+  margin-top: 40px;
+  background: $white;
+
+  &_links.tabs,
+  &_links.tabs .navigation_links-item {
+    height: auto;
+    line-height: initial;
+  }
+
+  &_links.tabs .navigation_links-item-link {
+    padding: 1rem;
+    color: $link;
+    @include nav_link;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+}

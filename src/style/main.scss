@@ -1,0 +1,67 @@
+@import "./common/color-vars.scss";
+@import "./common/vars.scss";
+@import "./common/fonts.scss";
+@import "./common/mixins.scss";
+@import "./shared/product-card.scss";
+@import "/node_modules/reset-css/reset.css";
+@import "./node_modules/materialize-css/sass/materialize.scss";
+
+@import "./header/header.scss";
+@import "./main/main.import.scss";
+@import "./footer/footer.scss";
+
+body {
+  overflow-x: hidden;
+  background: $body-bg;
+  padding-top: 40px;
+}
+
+header,
+main,
+footer {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+form input[type=text]:not(.browser-default):focus:not([readonly]),
+form input[type=text]:not(.browser-default) {
+  margin: 0;
+  padding: 0 4px;
+  max-height: $inputs-height;
+  border: 1px solid $border;
+  box-shadow: none;
+}
+
+input[type=text]:not(.browser-default) {
+  padding: 0 8px;
+  max-height: $inputs-height;
+  border: 1px solid $border;
+  width: calc(100% - 16px);
+  @include nav_link;
+
+  &::placeholder {
+    color: $disabled-text;
+  }
+
+  &:focus:not([readonly]) {
+    border: 1px solid $border;
+    box-shadow: none;
+  }
+}
+
+.btn,
+.btn-large,
+.btn-small {
+  background: $btn-primary;
+  box-shadow: none;
+
+  &:hover {
+    background: $btn-primary;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  &:active {
+    box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.05);
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+  }
+}

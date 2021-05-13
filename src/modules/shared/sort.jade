@@ -1,0 +1,23 @@
+mixin sorting(stocks, sorting)
+    div.sorting
+        ul.pagination
+            li.disabled.pagination-btn
+                a(href="#!") <
+            each stockItem, i in stocks
+                if (i % 3 === 0)
+                    if (i === 0)
+                        li.pagination-btn.active
+                            a(href="#!")= i + 1
+                    else
+                        li.pagination-btn.waves-effect
+                            a(href="#!")= (i / 3) + 1
+            li.waves-effect.pagination-btn
+                a(href="#!") >
+
+        div.sort
+            p.sort-name Sort by
+            div.input-field
+                select
+                    option(value="" disabled selected) Choose your option
+                    each sortItem, i in sortList
+                        option(value=i)= sortItem

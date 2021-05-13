@@ -1,0 +1,8 @@
+header {
+  background: $white;
+}
+
+.header-logo {
+  padding: 40px 16px;
+  @include header_logo;
+}

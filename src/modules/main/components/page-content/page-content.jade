@@ -1,0 +1,21 @@
+- let header = page_meta;
+- let stocks = stock;
+- let sortList = sorting;
+- let pageText = page_text;
+
+h1.page-content_title= header.h1
+div.page-content__main
+    include components/filters.jade
+
+    div.page-content__main_content
+        include ../../../shared/sort.jade
+        +sorting(stocks, sortList)
+
+        include components/listing.jade
+
+        include ../../../shared/sort.jade
+        +sorting(stocks, sortList)
+
+        div.page-content__main_content-description
+            each textItem in pageText
+                #{textItem.tag}.page-content__main_content-description-value= textItem.content
